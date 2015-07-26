@@ -31,14 +31,53 @@ cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   inv <- x$getInverse()
   if(!is.null(inv)){
-    message("Cached Inverse Found...Getting Cached Inverse...")
+    message("\nCached Inverse Found...Getting Cached Inverse...\n")
     print(inv)
     return(inv)
   }
-  message("No Cached Inverse Found...Performing the Inverse...")
+  message("\nNo Cached Inverse Found...Performing the Inverse...")
   mat_data <- x$get()
   inv <- solve(mat_data)
   x$setInverse(inv)
-  message("Inverted Matrix is:")
+  message("\nInverted Matrix is:\n")
   print(x$getInverse())
 }
+
+####################
+#     SAMPLE RUN    
+####################
+
+# First Run for a 2D Matrix 
+x = rbind(c(1, 1/2), c(1/4, 1))
+m = makeCacheMatrix(x)
+cat("\nInput Matrix is:\n")
+print(m$get())
+start <- proc.time()
+cacheSolve(m)
+cat("\nTime Taken:\n")
+print(proc.time() - start)
+
+# Second Run for the 2D Matrix
+start <- proc.time()
+cacheSolve(m)
+cat("\nTime Taken:\n")
+print(proc.time() - start)
+
+# First Run for a 3D Matrix 
+r1 <- c(1, 1/2, 1/3)
+r2 <- c(1/2, 1, 1/3)
+r3 <- c(1/3, 1/2, 1)
+x <- rbind(r1, r2, r3)
+m = makeCacheMatrix(x)
+print("Input Matrix is:")
+print(m$get())
+start <- proc.time()
+cacheSolve(m)
+cat("\nTime Taken:\n")
+print(proc.time() - start)
+
+# Second Run for the 2D Matrix
+start <- proc.time()
+cacheSolve(m)
+cat("\nTime Taken:\n")
+print(proc.time() - start)
