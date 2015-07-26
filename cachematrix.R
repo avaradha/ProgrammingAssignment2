@@ -81,3 +81,66 @@ start <- proc.time()
 cacheSolve(m)
 cat("\nTime Taken:\n")
 print(proc.time() - start)
+
+############################
+#   OUTPUT OF SAMPLE RUN    
+############################
+
+# > source('~/github/ProgrammingAssignment2/cachematrix.R')
+# 
+# Input Matrix is:
+#   [,1] [,2]
+# [1,] 1.00  0.5
+# [2,] 0.25  1.0
+# 
+# No Cached Inverse Found...Performing the Inverse...
+# 
+# Inverted Matrix is:
+#   
+#   [,1]       [,2]
+# [1,]  1.1428571 -0.5714286
+# [2,] -0.2857143  1.1428571
+# 
+# Time Taken:
+#   user  system elapsed 
+# 0.004   0.003   0.125 
+# 
+# Cached Inverse Found...Getting Cached Inverse...
+# 
+# [,1]       [,2]
+# [1,]  1.1428571 -0.5714286
+# [2,] -0.2857143  1.1428571
+# 
+# Time Taken:
+#   user  system elapsed 
+# 0.001   0.000   0.001 
+# [1] "Input Matrix is:"
+# [,1] [,2]      [,3]
+# r1 1.0000000  0.5 0.3333333
+# r2 0.5000000  1.0 0.3333333
+# r3 0.3333333  0.5 1.0000000
+# 
+# No Cached Inverse Found...Performing the Inverse...
+# 
+# Inverted Matrix is:
+#   
+#   r1         r2         r3
+# [1,]  1.3636364 -0.5454545 -0.2727273
+# [2,] -0.6363636  1.4545455 -0.2727273
+# [3,] -0.1363636 -0.5454545  1.2272727
+# 
+# Time Taken:
+#   user  system elapsed 
+# 0.001   0.001   0.001 
+# 
+# Cached Inverse Found...Getting Cached Inverse...
+# 
+# r1         r2         r3
+# [1,]  1.3636364 -0.5454545 -0.2727273
+# [2,] -0.6363636  1.4545455 -0.2727273
+# [3,] -0.1363636 -0.5454545  1.2272727
+# 
+# Time Taken:
+#   user  system elapsed 
+# 0.001   0.000   0.001 
+# >
